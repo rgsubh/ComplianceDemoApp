@@ -16,8 +16,8 @@ jobs:
         with:
          creds: ${{secrets.AZ_SPN_CREDS}}
 
-      - name: Update WebApp configuration - Disable Logging
-        run: bash ./workflow/.github/workflows/scripts/updateAppConfig.sh disableLogging.json /subscriptions/c00d16c7-6c1f-4c03-9be1-6934a4c49682/resourceGroups/az-pac-demo/providers/Microsoft.Web/sites/security-policy-app-dev
+      - name: Configure
+        run: bash ./workflow/.github/workflows/scripts/updateAppConfig.sh appConfig.json /subscriptions/c00d16c7-6c1f-4c03-9be1-6934a4c49682/resourceGroups/az-pac-demo/providers/Microsoft.Web/sites/security-policy-app-dev
 
       - name: Deploy to WebApp
         uses: azure/webapps-deploy@v2
