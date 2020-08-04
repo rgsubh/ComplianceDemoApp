@@ -17,7 +17,7 @@ jobs:
          creds: ${{secrets.AZ_SPN_CREDS}}
 
       - name: Configure
-        run: bash ./workflow/.github/workflows/scripts/updateAppConfig.sh appConfig.json /subscriptions/c00d16c7-6c1f-4c03-9be1-6934a4c49682/resourceGroups/az-pac-demo/providers/Microsoft.Web/sites/PolicyScanDemoApp
+        run: bash ./workflow/.github/workflows/scripts/updateAppConfig.sh appConfigDev.json /subscriptions/c00d16c7-6c1f-4c03-9be1-6934a4c49682/resourceGroups/az-pac-demo/providers/Microsoft.Web/sites/PolicyScanDemoApp
 
       - name: Deploy to WebApp
         uses: azure/webapps-deploy@v2
