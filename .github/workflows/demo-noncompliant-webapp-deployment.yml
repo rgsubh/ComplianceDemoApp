@@ -22,7 +22,7 @@ jobs:
       - name: Deploy to WebApp
         uses: azure/webapps-deploy@v2
         with:
-          app-name: azpactestwebapp
+          app-name: PolicyScanDemoApp
           publish-profile: ${{ secrets.AZPACTESTWEBAPP_PUBLISHPROFILE }}
           package: ./workflow/nodeApp/
       
