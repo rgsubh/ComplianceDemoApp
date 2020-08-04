@@ -17,20 +17,20 @@ jobs:
          creds: ${{secrets.AZ_SPN_CREDS}}
       
       - name: Configure
-        run: bash ./workflow/.github/workflows/scripts/updateAppConfig.sh appConfig.json /subscriptions/c00d16c7-6c1f-4c03-9be1-6934a4c49682/resourceGroups/az-pac-demo/providers/Microsoft.Web/sites/PolicyScanDemoApp
+        run: bash ./workflow/.github/workflows/scripts/updateAppConfig.sh appConfig.json /subscriptions/c00d16c7-6c1f-4c03-9be1-6934a4c49682/resourceGroups/az-pac-demo/providers/Microsoft.Web/sites/PolicyComplianceScanDemoAPP
 
       - name: Deploy to WebApp
         uses: azure/webapps-deploy@v2
         with:
-          app-name: PolicyScanDemoApp
-          publish-profile: ${{ secrets.AZPACTESTWEBAPP_PUBLISHPROFILE }}
+          app-name: PolicyComplianceScanDemoAPP
+          publish-profile: ${{ secrets.PolicyComplianceScanDemoAPP_PUBLISHPROFILE }}
           package: ./workflow/nodeApp/
       
       - name: Check resource compliance post deployment
         uses: Azure/policy-compliance-scan@v0
         with:
           scopes: |
-             /subscriptions/c00d16c7-6c1f-4c03-9be1-6934a4c49682/resourceGroups/az-pac-demo/providers/Microsoft.Web/sites/PolicyScanDemoApp
+             /subscriptions/c00d16c7-6c1f-4c03-9be1-6934a4c49682/resourceGroups/az-pac-demo/providers/Microsoft.Web/sites/PolicyComplianceScanDemoAPP
             
             
             
