@@ -17,7 +17,7 @@ jobs:
          creds: ${{secrets.AZ_SPN_CREDS}}
 
       - name: Configure
-        run: bash ./workflow/.github/workflows/scripts/updateAppConfig.sh appConfig.json /subscriptions/c00d16c7-6c1f-4c03-9be1-6934a4c49682/resourceGroups/az-pac-demo/providers/Microsoft.Web/sites/security-policy-app-dev
+        run: bash ./workflow/.github/workflows/scripts/updateAppConfig.sh appConfig.json /subscriptions/c00d16c7-6c1f-4c03-9be1-6934a4c49682/resourceGroups/az-pac-demo/providers/Microsoft.Web/sites/PolicyScanDemoApp
 
       - name: Deploy to WebApp
         uses: azure/webapps-deploy@v2
@@ -30,4 +30,4 @@ jobs:
         uses: Azure/policy-compliance-scan@v0
         with:
           scopes: |
-             /subscriptions/c00d16c7-6c1f-4c03-9be1-6934a4c49682/resourceGroups/az-pac-demo/providers/Microsoft.Web/sites/security-policy-app-dev
+             /subscriptions/c00d16c7-6c1f-4c03-9be1-6934a4c49682/resourceGroups/az-pac-demo/providers/Microsoft.Web/sites/PolicyScanDemoApp
