@@ -1,6 +1,6 @@
 {
     "properties": {
-        "httpsOnly": "false",
+        "httpsOnly": "true",
         "trafficManagerHostNames": null,
         "sku": "Basic",
         "scmSiteAlsoStopped": false,
