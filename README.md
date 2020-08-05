@@ -20,5 +20,3 @@ This deployment workflow is triggered on code push to branch. It deploys the nod
  There are polices "Web Application should only be accessible over HTTPS" assigned which mandate APP to be accessed only via HTTPS.
 
  
-
- 
