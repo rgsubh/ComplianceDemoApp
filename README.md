@@ -1,6 +1,6 @@
 # Compliance Scan Action
 
-A GitHub action to trigger an on-demand scan of Azure Policy for a given scope.
+GitHub action to trigger an on-demand scan of Azure Policy for a given scope.
 
 ## Demo Script:
 
@@ -16,7 +16,6 @@ This deployment workflow is triggered on code push to branch. It deploys the nod
 
 ### noncompliant-webapp-deployment
 This deployment workflow is triggered on code push to branch. It deploys the node app to Azure Web APP server. There are  non-compliance changes made as a part of this deployment i.e:
-- Detailed error logging is disabled
-- Failed Request tracing is disabled <br>
- and there are polices assigned which mandate this logging and tracing hence the post-deployment compliance scan will be failure.
+- "Redirect all HTTP traffic to HTTPS" is disabled
+ and there are polices "Web Application should only be accessible over HTTPS" assigned which mandate APP to be accessed only via HTTPS.
  
